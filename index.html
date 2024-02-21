@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Akram</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+<!-- <script src="https://kit.fontawesome.com/a1a7b0296e.js" crossorigin="anonymous"></script> -->
+</head>
+<body>    
+  <ul class="nav_bar">
+    <li><a href="#top">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills & Experiences</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><img class="profile1" src="images/me.jpeg" alt="profile"></li>
+  </ul>
+    <div id="top" class="top_container">
+        <img class="top-cloud" src="images/cloud.png" alt="Cloud image">
+        <h1>I'm Akramuzzaman</h1>
+        <p id="paragraph">A Web Developer</p>
+        <img class="bottom-cloud" src="images/cloud.png" alt="Cloud image">
+        <img src="images/mountain.png" alt="Mountain image">
+    </div>
+    <div id="about" class="middle-container">
+        <div class="profile">
+          <img class="profile_pic" src="images/profile.png" alt="Profile Picture">
+          <h2>Hello.</h2>
+          <p id="intro">I'm Mohammad Akramuzzaman an undergraduate student in American International University-Bangladesh.</p>
+        </div>
+
+
+        <button id="toggleButton">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="plus">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
+        </button>
+          <div id="toggleContent" style="display: none;">
+          <img class="resume" id-="image" src="images/CV.jpeg" alt="Resume">
+        </div>
+        
+        <hr>
+        <div id="skills" class="skills">
+          <h2>My Skills.</h2>
+          <div class="skill-row">
+            <img class="skill" src="images/skill.png" alt="Computer icon">
+            <h3>Design & Development</h3>
+            <p>I have worked on multiple group projects in university courses and worked on solo projects for practice.</p>
+          </div>
+          <div class="skill-row">
+            <img class="reading" src="images/reading.png" alt="Icon">
+            <h3>Work Experience</h3>
+            <p>I have Worked as a trainee web developer at Pixl IT LTD. Developed multiple web based application during the intern periord.</p>
+          </div>
+          <div class="tools-row">
+            <h3>Languages & Tools</h3>
+            <div class="icons-container">
+              <img src="images/icons/js.png" alt="js">
+              <img src="images/icons/typescript.png" alt="ts">
+              <img src="images/icons/react (1).png" alt="react">
+              <img src="images/icons/nextjs.svg" alt="next">
+              <img src="images/icons/nestjs.svg" alt="nest">
+              <img src="images/icons/html-5.png" alt="html">
+              <img src="images/icons/css.png" alt="Css">
+              <img src="images/icons/php.png" alt="php">
+              <img src="images/icons/c.png" alt="C">
+              <img src="images/icons/c++.png" alt="C++">
+              <img src="images/icons/c-sharp.png" alt="C#">
+              <img src="images/icons/python.png" alt="python">
+              <img src="images/icons/postgre.png" alt="postgres">
+              <img src="images/icons/mysql.png" alt="mysql">
+              <img src="images/icons/github.png" alt="git">
+              <img src="images/icons/postman-icon.png" alt="postman">
+              <img src="images/icons/jira.png" alt="jira">
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="contact-me">
+          <h2>Get In Touch</h2>
+          <h3>You can contact me any time.</h3>
+          <p id="mgs">I am avilable 24/7. So, if you have any query or suggestion don't feel shy to send me an email.</p>
+          <a class="btn" href="mailto:akramuzzaman7575@gmail.com">CONTACT ME</a>
+        </div>
+      </div>
+      
+      
+      <div id="contact" class="bottom-container">
+        <a class="footer-link" href="https://www.linkedin.com/">LinkedIn</a>
+        <a class="footer-link" href="https://twitter.com/">Twitter</a>
+        <a class="footer-link" href="https://www.appbrewery.co/">Website</a>
+        <p class="copyright">© 2023 AK Raju.</p>
+      </div>
+      
+
+
+      <script>
+        function adjustNavHeight(TargetId){
+          const navHeight= document.querySelector('.nav_bar').offsetHeight;
+          const container= document.querySelector(TargetId);
+
+          // const container= document.querySelector('.middle-container','.skills');
+          container.style.paddingTop=(navHeight+10)+'px';
+        }
+        document.querySelectorAll('.nav_bar a').forEach(link => {
+        link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const TargetId = link.getAttribute('href');
+        adjustNavHeight(TargetId);
+        window.location.hash =TargetId;
+      });
+  });
+
+  function togglePlus() {
+  const toggleButton = document.getElementById('toggleButton');
+  const toggleContent = document.getElementById('toggleContent');
+
+  toggleButton.addEventListener('click', function() {
+    if (toggleContent.style.display === 'none') {
+      toggleContent.style.display = 'block';
+    } else {
+      toggleContent.style.display = 'none';
+    }
+  });
+}
+togglePlus();
+ </script>
+    
+</body> 
+</html>
